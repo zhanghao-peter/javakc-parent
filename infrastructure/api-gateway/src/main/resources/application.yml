@@ -1,0 +1,22 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+        discovery:
+          locator:
+            enabled: true
+        routes:
+          - id: service-pms #随便写，最好使用服务名
+            uri: lb://service-pms #服务名一定一致
+            predicates:
+              - Path=/pms/**  #要匹配的路径
+          - id: service-mes #随便写，最好使用服务名
+            uri: lb://service-mes #服务名一定一致
+            predicates:
+              - Path=/mes/**  #要匹配的路径

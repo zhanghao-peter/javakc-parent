@@ -44,13 +44,13 @@ public class DispOrd {
     @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     @ApiModelProperty(value = "创建时间")
-    @Column(name = "gmt_create",nullable = false,updatable = false)
+    @Column(name = "gmt_create",updatable = false)
     private Date gmtCreate;
 
     @LastModifiedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     @ApiModelProperty(value = "修改时间")
-    @Column(name = "gmt_modified",nullable = false,insertable = false)
+    @Column(name = "gmt_modified",insertable = false)
     private Date gmtModified;
 
 }
